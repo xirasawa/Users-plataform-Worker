@@ -1,0 +1,19 @@
+{
+  "name": "queue",
+  "version": "1.0.0",
+  "description": "queue directory",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/worker.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matheus Shirasawa",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.12.0",
+    "rascal": "^16.3.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.12.0"
+  }
+}

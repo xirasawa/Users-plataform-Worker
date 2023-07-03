@@ -1,0 +1,46 @@
+{
+  "vhosts": {
+    "/": {
+      "connection": {
+        "url": "amqp://guest:guest@localhost:5672"
+      },
+      "exchanges": [
+        "request"
+      ],
+      "queues": [
+        "createUser",
+        "deleteUser",
+        "updateUser"
+      ],
+      "bindings": [
+        {
+          "source": "request",
+          "destination": "createUser",
+          "bindingKey": "create"
+        },
+        {
+          "source": "request",
+          "destination": "deleteUser",
+          "bindingKey": "delete"
+        },
+        {
+          "source": "request",
+          "destination": "updateUser",
+          "bindingKey": "update"
+        }
+      ],
+
+      "subscriptions": {
+        "createSubscription": {
+          "queue": "createUser"
+        },
+        "deleteSubscription": {
+          "queue": "deleteUser"
+        },
+        "updateSubscription": {
+          "queue": "updateUser"
+        }
+      }
+    }
+  }
+}
